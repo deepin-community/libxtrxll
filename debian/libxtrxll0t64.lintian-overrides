@@ -1,0 +1,5 @@
+# begin-remove-after: released:forky
+# protective diversion for upgrades of files moved from / to /usr
+libxtrxll0t64: diversion-for-unknown-file lib/udev/rules.d/50-libxtrxll0t64.rules [preinst:*]
+# end-remove-after
+libxtrxll0t64: package-name-doesnt-match-sonames libxtrxll0

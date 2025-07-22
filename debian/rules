@@ -1,4 +1,23 @@
 #!/usr/bin/make -f
 
+include /usr/share/dpkg/architecture.mk
+
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DLIB_SUFFIX="/$(DEB_HOST_MULTIARCH)" \
+		-DCMAKE_BUILD_RPATH_USE_ORIGIN=ON \
+		-DXTRXLL_STATIC=OFF
+
+override_dh_installudev:
+	cp mod_usb3380/udev/50-xtrx-usb3380.rules debian/libxtrxll0t64.udev
+	dh_installudev --priority=50
+	# This should be harmless after dh_installudev changes its default install path.
+	set -e; if test -d debian/libxtrxll0t64/lib/udev/rules.d; then mv debian/libxtrxll0t64/lib/udev debian/libxtrxll0t64/usr/lib; fi
+	set -e; if test -d debian/libxtrxll0t64/lib; then rmdir debian/libxtrxll0t64/lib; fi
+
+override_dh_clean:
+	rm -f debian/libxtrxll0.udev
+	dh_clean

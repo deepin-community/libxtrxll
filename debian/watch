@@ -1,0 +1,4 @@
+version=4
+opts=mode=git,pretty=0.0.1+git%cd.%h, \
+ https://github.com/xtrx-sdr/libxtrxll.git \
+ heads/master debian
