@@ -1,3 +1,9 @@
+libxtrxll (0.0.1+git20201202.1b6eddf-1.2deepin1) unstable; urgency=medium
+
+  * revert t64
+
+ -- Chang Yang <yangchang@deepin.org>  Tue, 22 Jul 2025 11:49:04 +0800
+
 libxtrxll (0.0.1+git20201202.1b6eddf-1.2) unstable; urgency=medium
 
   * Non-maintainer upload.

@@ -12,7 +12,7 @@ Package: libxtrxll-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: libxtrxll0t64 (= ${binary:Version}), ${misc:Depends}
+Depends: libxtrxll0 (= ${binary:Version}), ${misc:Depends}
 Description: Low-level XTRX hardware abstraction library: development
  This package is part of the library set for XTRX support.
  .
@@ -22,10 +22,7 @@ Description: Low-level XTRX hardware abstraction library: development
  .
  This package contains development files.
 
-Package: libxtrxll0t64
-Provides: ${t64:Provides}
-Replaces: libxtrxll0
-Breaks: libxtrxll0 (<< ${source:Version})
+Package: libxtrxll0
 Architecture: any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
