@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <id>co.fairwaves.xtrx.usb</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-2.1-or-later</project_license>
+  <name>libxtrxll</name>
+  <summary>XTRX SDR driver for USB</summary>
+  <description>
+    <p>
+      XTRX is the smallest easily embeddable software-defined radio (SDR). It
+      is both affordable and high-performance. XTRX is designed to enable the
+      next generation of wireless solutions, from prototype to production.
+    </p>
+  </description>
+  <url type="homepage">https://xtrx.io/</url>
+  <provides>
+    <modalias>usb:v0525p3380d*</modalias>
+  </provides>
+</component>

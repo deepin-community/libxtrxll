@@ -1,0 +1,20 @@
+Linking pthreads and libusb-1.0.
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -85,6 +85,7 @@
+ option(ENABLE_PCIE    "Enable PCIe Low-level XTRX driver"    ON)
+ option(ENABLE_USB3380 "Enable USB3380 Low-level XTRX driver" ON)
+ 
++find_package(Threads REQUIRED)
+ find_package(libusb3380)
+ if(NOT LIBUSB3380_FOUND)
+ 	if(ENABLE_USB3380)
+@@ -119,7 +120,7 @@
+ add_library(xtrxll SHARED
+ 	xtrxll_log.c xtrxll_port.c xtrxll_base.c xtrxll_base_pcie.c
+ 	xtrxll_mmcm.c xtrxll_flash.c xtrxll_api.c)
+-target_link_libraries(xtrxll ${SYSTEM_LIBS})
++target_link_libraries(xtrxll Threads::Threads usb-1.0 ${SYSTEM_LIBS})
+ if(XTRXLL_STATIC AND ENABLE_PCIE)
+ 	target_link_libraries(xtrxll xtrxll_pcie)
+ endif()

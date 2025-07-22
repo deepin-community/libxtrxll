@@ -1,0 +1,3 @@
+usr/lib/*/lib*.so.*
+usr/lib/*/xtrxll/*
+debian/co.fairwaves.xtrx.usb.metainfo.xml usr/share/metainfo

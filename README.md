@@ -1,1 +1,2 @@
-# template-repository
+# libxtrxll
+Low level XTRX hardware abstraction library
